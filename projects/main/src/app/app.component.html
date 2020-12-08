@@ -24,16 +24,20 @@
         </mat-menu>
       </span>
     </mat-toolbar> -->
-    <div fxLayout="row" fxLayoutGap="10px">
-      <a routerLink="/home">Home</a>
-      <a routerLink="/signup">Sign up</a>
-      
-      <button 
-        mat-raised-button color="primary">
-        Test
-      </button>
-    </div>
+   
     <div class="pull-it-off-content">
+      <div fxLayout="row" fxLayoutGap="10px">
+        <button 
+          routerLink="/home"
+          mat-button color="primary">
+          Home
+        </button>
+        <button 
+          routerLink="/signup"
+          mat-button color="warn">
+          Sign up
+        </button>
+      </div>
       <div class="pull-it-off-card-container" fxLayout="row">
         <router-outlet></router-outlet>
       </div>
