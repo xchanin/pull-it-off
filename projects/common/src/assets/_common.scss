@@ -1,0 +1,20 @@
+@import './common-theme';
+
+$global-theme: contrast-theme(true);
+
+$primary: map-get($global-theme, primary);
+$accent: map-get($global-theme, accent);
+$warn: map-get($global-theme, warn);
+$background: map-get(map-get($global-theme, 'background'), 'background');
+$background-fill: rgba(map-get($mat-grey, 900), .75);
+$foreground: map-get(map-get($global-theme, 'foreground'), 'base');
+$primary-text: mat-color($primary);
+$secondary-text: map-get(map-get($global-theme, 'foreground'), 'secondary-text');
+
+html, body {
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0 !important;
+    background-color: $background;
+    color: white;
+}

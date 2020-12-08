@@ -1,0 +1,14 @@
+{
+  "templates": {
+    "repository": "lowcodeunit-devkit/lcu-cli-templates-core",
+    "scope": "@pull-it-off",
+    "workspace": "pullitoff"
+  },
+  "config": {
+    "wc": ["wc/pullitoff.lcu.js"],
+    "solutions": {},
+    "elements": {},
+    "data-flow": {},
+    "dependencies": {}
+  }
+}
