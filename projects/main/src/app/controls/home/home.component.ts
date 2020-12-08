@@ -2,7 +2,7 @@ import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lcu-home',
+  selector: 'pio-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })

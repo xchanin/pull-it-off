@@ -6,8 +6,6 @@ import { FathymSharedModule, MaterialModule } from '@lcu/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './controls/home/home.component';
-import { DocumentationComponent } from './controls/documentation/documentation.component';
-import { LcuDocumentationModule } from '@lowcodeunit/lcu-documentation-common';
 import { PullitoffModule } from '@pull-it-off/pullitoff-common';
 import { SignUpComponent } from './controls/sign-up/sign-up.component';
 
@@ -15,7 +13,6 @@ import { SignUpComponent } from './controls/sign-up/sign-up.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    DocumentationComponent,
     SignUpComponent
   ],
   imports: [
@@ -25,7 +22,6 @@ import { SignUpComponent } from './controls/sign-up/sign-up.component';
     FathymSharedModule,
     MaterialModule,
     FlexLayoutModule,
-    LcuDocumentationModule.forRoot(),
     PullitoffModule.forRoot()
   ],
   providers: [],

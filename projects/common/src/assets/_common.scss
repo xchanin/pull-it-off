@@ -1,6 +1,6 @@
 @import './common-theme';
 
-$global-theme: contrast-theme(true);
+// $global-theme: contrast-theme(false);
 
 $primary: map-get($global-theme, primary);
 $accent: map-get($global-theme, accent);

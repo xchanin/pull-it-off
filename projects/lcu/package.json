@@ -1,5 +1,5 @@
 {
-	"name": "@pull-it-off/pullitoff-lcu",
+	"name": "@pull-it-off/pullitoff-pio",
 	"version": "0.0.1",
 	"peerDependencies": {
 		"@angular/common": "~8.1.2",

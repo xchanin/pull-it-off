@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FathymSharedModule, LCUServiceSettings } from '@lcu/common';
+import { FathymSharedModule, pioServiceSettings } from '@pio/common';
 import { environment } from '../environments/environment';
 import { PullitoffModule } from '@pull-it-off/pullitoff-common';
 
@@ -15,7 +15,7 @@ import { PullitoffModule } from '@pull-it-off/pullitoff-common';
   ],
   providers: [
     {
-      provide: LCUServiceSettings,
+      provide: pioServiceSettings,
       useValue: FathymSharedModule.DefaultServiceSettings(environment)
     }
   ],

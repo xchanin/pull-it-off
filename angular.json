@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/common",
       "sourceRoot": "projects/common/src",
-      "prefix": "lcu",
+      "prefix": "pio",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -43,41 +43,41 @@
         }
       }
     },
-    "lcu": {
+    "pio": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "projects/lcu",
-      "sourceRoot": "projects/lcu/src",
-      "prefix": "lcu",
+      "root": "projects/pio",
+      "sourceRoot": "projects/pio/src",
+      "prefix": "pio",
       "architect": {
         "build": {
           "builder": "ngx-build-plus:browser",
           "options": {
-            "outputPath": "dist/lcu",
-            "index": "projects/lcu/src/index.html",
-            "main": "projects/lcu/src/main.ts",
-            "polyfills": "projects/lcu/src/polyfills.ts",
-            "tsConfig": "projects/lcu/tsconfig.app.json",
+            "outputPath": "dist/pio",
+            "index": "projects/pio/src/index.html",
+            "main": "projects/pio/src/main.ts",
+            "polyfills": "projects/pio/src/polyfills.ts",
+            "tsConfig": "projects/pio/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "projects/lcu/src/favicon.ico",
+              "projects/pio/src/favicon.ico",
               {
                 "glob": "package.json",
-                "input": "./projects/lcu/",
+                "input": "./projects/pio/",
                 "output": "/"
               },
               {
-                "glob": "lcu.json",
+                "glob": "pio.json",
                 "input": "./",
                 "output": "/"
               }
             ],
             "styles": [
-              "projects/lcu/src/styles.scss"
+              "projects/pio/src/styles.scss"
             ],
             "scripts": [
               "node_modules/@webcomponents/custom-elements/src/native-shim.js",
@@ -95,8 +95,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/lcu/src/environments/environment.ts",
-                  "with": "projects/lcu/src/environments/environment.prod.ts"
+                  "replace": "projects/pio/src/environments/environment.ts",
+                  "with": "projects/pio/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -113,33 +113,33 @@
         "serve": {
           "builder": "ngx-build-plus:dev-server",
           "options": {
-            "browserTarget": "lcu:build"
+            "browserTarget": "pio:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "lcu:build:production"
+              "browserTarget": "pio:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "lcu:build"
+            "browserTarget": "pio:build"
           }
         },
         "test": {
           "builder": "ngx-build-plus:karma",
           "options": {
-            "main": "projects/lcu/src/test.ts",
-            "polyfills": "projects/lcu/src/polyfills.ts",
-            "tsConfig": "projects/lcu/tsconfig.spec.json",
-            "karmaConfig": "projects/lcu/karma.conf.js",
+            "main": "projects/pio/src/test.ts",
+            "polyfills": "projects/pio/src/polyfills.ts",
+            "tsConfig": "projects/pio/tsconfig.spec.json",
+            "karmaConfig": "projects/pio/karma.conf.js",
             "assets": [
-              "projects/lcu/src/favicon.ico",
-              "projects/lcu/src/assets"
+              "projects/pio/src/favicon.ico",
+              "projects/pio/src/assets"
             ],
             "styles": [
-              "projects/lcu/src/styles.scss"
+              "projects/pio/src/styles.scss"
             ],
             "scripts": []
           }
@@ -148,9 +148,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/lcu/tsconfig.app.json",
-              "projects/lcu/tsconfig.spec.json",
-              "projects/lcu/e2e/tsconfig.json"
+              "projects/pio/tsconfig.app.json",
+              "projects/pio/tsconfig.spec.json",
+              "projects/pio/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -160,12 +160,12 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/lcu/e2e/protractor.conf.js",
-            "devServerTarget": "lcu:serve"
+            "protractorConfig": "projects/pio/e2e/protractor.conf.js",
+            "devServerTarget": "pio:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "lcu:serve:production"
+              "devServerTarget": "pio:serve:production"
             }
           }
         }
@@ -180,7 +180,7 @@
       },
       "root": "projects/main",
       "sourceRoot": "projects/main/src",
-      "prefix": "lcu",
+      "prefix": "pio",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -287,5 +287,5 @@
       }
     }
   },
-  "defaultProject": "lcu"
+  "defaultProject": "pio"
 }

@@ -4,13 +4,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "lcu",
+      "pio",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "lcu",
+      "pio",
       "kebab-case"
     ]
   }

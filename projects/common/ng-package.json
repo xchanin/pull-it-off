@@ -2,6 +2,6 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/common",
   "lib": {
-    "entryFile": "src/lcu.api.ts"
+    "entryFile": "src/pio.api.ts"
   }
 }

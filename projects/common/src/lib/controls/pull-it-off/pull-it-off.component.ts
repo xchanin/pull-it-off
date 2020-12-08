@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PullItOffModel } from '../../models/pull-it-off.model';
 
 @Component({
-  selector: 'lcu-pull-it-off',
+  selector: 'pio-pull-it-off',
   templateUrl: './pull-it-off.component.html',
   styleUrls: ['./pull-it-off.component.scss']
 })
