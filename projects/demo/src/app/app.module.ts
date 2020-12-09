@@ -6,14 +6,12 @@ import { FathymSharedModule, MaterialModule } from '@lcu/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './controls/home/home.component';
-import { PullitoffModule } from '@pull-it-off/pullitoff-common';
-import { SignUpComponent } from './controls/sign-up/sign-up.component';
+import { PullItOffModule } from '@pio/pull-it-off-common';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    SignUpComponent
+    HomeComponent
   ],
   imports: [
     AppRoutingModule,
@@ -22,11 +20,10 @@ import { SignUpComponent } from './controls/sign-up/sign-up.component';
     FathymSharedModule,
     MaterialModule,
     FlexLayoutModule,
-    PullitoffModule.forRoot()
+    PullItOffModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [PullitoffModule, SignUpComponent],
-  entryComponents: [SignUpComponent]
+  exports: [PullItOffModule]
 })
 export class AppModule { }

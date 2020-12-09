@@ -2,24 +2,25 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FathymSharedModule, MaterialModule } from '@lcu/common';
-import { PullItOffService } from './services/pull-it-off.service';
-import { PullItOffComponent } from './controls/pull-it-off/pull-it-off.component';
 import { PullItOffDirective } from './directives/pull-it-off.directive';
-import { WelcomeComponent } from './controls/welcome/welcome.component';
+import { PullItOffService } from './services/pull-it-off.service';
+import { EventsComponent } from './pages/events/events.component';
 import { NavListComponent } from './controls/nav-list/nav-list.component';
 import { NavigationComponent } from './controls/navigation/navigation.component';
 import { SideNavComponent } from './controls/side-nav/side-nav.component';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
-    PullItOffComponent,
     PullItOffDirective,
-    WelcomeComponent,
+    EventsComponent,
     NavListComponent,
     NavigationComponent,
     SideNavComponent,
-    SignUpComponent],
+    WelcomeComponent,
+    SignUpComponent
+  ],
   imports: [
     FathymSharedModule,
     FormsModule,
@@ -28,24 +29,27 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
     MaterialModule
   ],
   exports: [
-    PullItOffComponent,
     PullItOffDirective,
-    WelcomeComponent,
+    EventsComponent,
     NavListComponent,
     NavigationComponent,
     SideNavComponent,
-    SignUpComponent],
+    WelcomeComponent,
+    SignUpComponent
+  ],
   entryComponents: [
-    WelcomeComponent,
+    EventsComponent,
     NavListComponent,
     NavigationComponent,
     SideNavComponent,
-    SignUpComponent]
+    WelcomeComponent,
+    SignUpComponent
+  ]
 })
-export class PullitoffModule {
-  static forRoot(): ModuleWithProviders<PullitoffModule> {
+export class PullItOffModule {
+  static forRoot(): ModuleWithProviders<PullItOffModule> {
     return {
-      ngModule: PullitoffModule,
+      ngModule: PullItOffModule,
       providers: [PullItOffService]
     };
   }

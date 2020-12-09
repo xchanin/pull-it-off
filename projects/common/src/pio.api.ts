@@ -8,3 +8,5 @@ export * from './lib/utils/pull-it-off.utils';
 export * from './lib/controls/welcome/welcome.component';
 export * from './lib/models/nav-link.model';
 export * from './lib/utils/parse-route.util';
+export * from './lib/utils/constants/navigation.constants';
+export * from './lib/pages/sign-up/sign-up.component';

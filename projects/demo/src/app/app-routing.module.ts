@@ -1,7 +1,7 @@
-import { SignUpComponent } from './controls/sign-up/sign-up.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './controls/home/home.component';
+import { SignUpComponent } from '@pio/pull-it-off-common';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },

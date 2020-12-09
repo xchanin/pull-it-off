@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { NavLinkModel, ParseRouteUtil, PullItOffUtils } from '@pull-it-off/pullitoff-common';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { ThemeColorPickerService } from '@lcu/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { 
+  PullItOffUtils,
+  NavLinkModel,
+  NavigationConstants,
+  ParseRouteUtil
+} from '@pio/pull-it-off-common';
 
 @Component({
   selector: 'pio-root',
@@ -20,7 +25,9 @@ export class AppComponent implements OnInit {
     protected router: Router,
     protected activatedRoute: ActivatedRoute,
     protected themeService: ThemeColorPickerService
-  ) { }
+  ) {
+    this.Links = NavigationConstants.MENU_ITEMS;
+   }
 
   public ngOnInit(): void {
     this.Title = PullItOffUtils.upperPullItOff(this.Title);

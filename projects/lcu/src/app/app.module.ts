@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FathymSharedModule, pioServiceSettings } from '@pio/common';
+import { FathymSharedModule, LCUServiceSettings } from '@lcu/common';
 import { environment } from '../environments/environment';
-import { PullitoffModule } from '@pull-it-off/pullitoff-common';
+import { PullItOffModule } from '@pio/pull-it-off-common';
 
 @NgModule({
   declarations: [],
@@ -11,14 +11,14 @@ import { PullitoffModule } from '@pull-it-off/pullitoff-common';
     BrowserModule,
     BrowserAnimationsModule,
     FathymSharedModule,
-    PullitoffModule.forRoot()
+    PullItOffModule.forRoot()
   ],
   providers: [
     {
-      provide: pioServiceSettings,
+      provide: LCUServiceSettings,
       useValue: FathymSharedModule.DefaultServiceSettings(environment)
     }
   ],
-  exports: [PullitoffModule]
+  exports: [PullItOffModule]
 })
 export class AppModule {}

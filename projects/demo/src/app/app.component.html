@@ -1,0 +1,14 @@
+<!-- <div [className]="ThemeClass | async" style="height: 100%"> -->
+  <div fxFlexFill>
+    <pio-side-nav
+           [nav-links]="Links" 
+           logo-class="primary-logo"
+           logo-alt="Fathym Logo">
+           <div class="margin-5 router-container">
+               <router-outlet (activate)="OnActivate($event)"></router-outlet>
+           </div>
+           <!-- <img class="bg-image" [src]="BackgroundImage" alt=""> -->
+       </pio-side-nav>
+   </div>
+   
+    

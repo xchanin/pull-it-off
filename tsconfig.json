@@ -16,10 +16,15 @@
 			"dom"
 		],
 		"paths": {
-			"@pull-it-off/pullitoff-common": [
-				"dist/common/common",
+			"@pio/pull-it-off-common": [
 				"dist/common"
-			]
+			],
+			"@pio/pull-it-off-common/*": [
+				"dist/common/*"
+			],
+			"@angular/*": [
+				"node_modules/@angular/*"
+			  ]
 		},
 		"noImplicitAny": true,
 		"suppressImplicitAnyIndexErrors": true
