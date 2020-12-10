@@ -24,6 +24,7 @@ import { PullItOffModule } from '@pio/pull-it-off-common';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [PullItOffModule]
+  exports: [PullItOffModule],
+  entryComponents: []
 })
 export class AppModule { }

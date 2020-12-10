@@ -12,9 +12,13 @@ export class NavListComponent implements OnInit {
   @Input('nav-links')
   public NavLinks: Array<NavLinkModel>;
 
-  constructor() { }
+  public linkText: boolean;
+  public OnSideNavToggle: boolean;
 
-  ngOnInit(): void {
+  constructor() {
+
   }
 
+  public ngOnInit(): void {
+  }
 }

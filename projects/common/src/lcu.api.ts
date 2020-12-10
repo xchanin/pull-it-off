@@ -13,3 +13,7 @@ export * from './lib/pages/sign-up/sign-up.component';
 export * from './lib/models/nav-link.model';
 export * from './lib/utils/constants/navigation.constants';
 export * from './lib/utils/parse-route.util';
+export * from './lib/controls/nav-mini/header/header.component';
+export * from './lib/controls/nav-mini/mini-left-menu/mini-left-menu.component';
+export * from './lib/services/mini-sidenav.service';
+export * from './lib/animations/animations';

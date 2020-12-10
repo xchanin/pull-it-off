@@ -10,6 +10,10 @@ import { NavigationComponent } from './controls/navigation/navigation.component'
 import { SideNavComponent } from './controls/side-nav/side-nav.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { HeaderComponent } from './controls/nav-mini/header/header.component';
+import { MiniLeftMenuComponent } from './controls/nav-mini/mini-left-menu/mini-left-menu.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MiniSideNavService } from './services/mini-sidenav.service';
 
 @NgModule({
   declarations: [
@@ -19,14 +23,17 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
     NavigationComponent,
     SideNavComponent,
     WelcomeComponent,
-    SignUpComponent
+    SignUpComponent,
+    HeaderComponent,
+    MiniLeftMenuComponent
   ],
   imports: [
     FathymSharedModule,
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    MaterialModule
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   exports: [
     PullItOffDirective,
@@ -35,7 +42,9 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
     NavigationComponent,
     SideNavComponent,
     WelcomeComponent,
-    SignUpComponent
+    SignUpComponent,
+    HeaderComponent,
+    MiniLeftMenuComponent
   ],
   entryComponents: [
     EventsComponent,
@@ -43,14 +52,16 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
     NavigationComponent,
     SideNavComponent,
     WelcomeComponent,
-    SignUpComponent
+    SignUpComponent,
+    HeaderComponent,
+    MiniLeftMenuComponent
   ]
 })
 export class PullItOffModule {
   static forRoot(): ModuleWithProviders<PullItOffModule> {
     return {
       ngModule: PullItOffModule,
-      providers: [PullItOffService]
+      providers: [PullItOffService, MiniSideNavService]
     };
   }
 }
