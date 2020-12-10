@@ -11,7 +11,7 @@ export class MiniSideNavService {
 
   constructor() {
     this.SideNavToggleChanged = new Subject();
-    // this.SideNavToggleVal = false;
+    this.SideNavToggleVal = false;
   }
 
   public SideNavToggle(): void {

@@ -18,35 +18,17 @@ interface Page {
 
 export class MiniLeftMenuComponent implements OnInit {
 
-  public onSideNavChange: boolean;
-  public sideNavState: boolean = false;
-  public linkText: boolean = false;
+  // tslint:disable-next-line:no-input-rename
+  @Input('nav-links')
+  public NavLinks: Array<NavLinkModel>;
 
-// tslint:disable-next-line:no-input-rename
-@Input('nav-links')
-public NavLinks: Array<NavLinkModel>;
+  constructor(public SideNavService: MiniSideNavService) {}
 
-  public pages: Page[] = [
-    {name: 'Inbox', link:'some-link', icon: 'inbox'},
-    {name: 'Starred', link:'some-link', icon: 'star'},
-    {name: 'Send email', link:'some-link', icon: 'send'},
-  ]
-
-  constructor(protected miniSideNavService: MiniSideNavService) {
-    // this.miniSideNavService.SideNavToggleChanged.subscribe((res: boolean) => {
-    //   this.onSideNavChange = res;
-    // });
-   }
-
-  ngOnInit() {
+  public ngOnInit(): void {
   }
 
-  onSinenavToggle() {
-    this.sideNavState = !this.sideNavState
-    setTimeout(() => {
-      this.linkText = this.sideNavState;
-    }, 200)
-    this.miniSideNavService.SideNavToggleChanged.next(this.sideNavState);
+  public ToggleSideNav(): void {
+    this.SideNavService.SideNavToggle();
   }
 
 }
