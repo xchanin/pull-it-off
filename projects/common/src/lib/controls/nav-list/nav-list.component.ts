@@ -16,7 +16,8 @@ export class NavListComponent implements OnInit {
   public NavLinks: Array<NavLinkModel>;
 
   public linkText: boolean;
-  public OnSideNavToggle: boolean;
+  public OnSideNavToggle: boolean; 
+  public Page: any;
 
   constructor(public SideNavService: MiniSideNavService) {
 

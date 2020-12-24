@@ -29,6 +29,7 @@ export class AppComponent implements OnInit {
 
     this.Links = NavigationConstants.MENU_ITEMS;
 
+    // TODO: assign miniSideNavService to local variable, so we can unsubscribe
     this.miniSideNavService.SideNavToggleChanged.subscribe((res: boolean) => {
       this.onSideNavChange = res;
     });
