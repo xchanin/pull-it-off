@@ -20,3 +20,5 @@ export * from './lib/animations/animations';
 export * from './lib/controls/video-player/video-player.component';
 export * from './lib/services/video/video.service';
 export * from './lib/models/video.model';
+export * from './lib/models/generic-modal.model';
+export * from './lib/services/generic-modal.service';
