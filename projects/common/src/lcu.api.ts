@@ -17,3 +17,6 @@ export * from './lib/controls/nav-mini/header/header.component';
 export * from './lib/controls/nav-mini/mini-left-menu/mini-left-menu.component';
 export * from './lib/services/mini-sidenav.service';
 export * from './lib/animations/animations';
+export * from './lib/controls/video-player/video-player.component';
+export * from './lib/services/video/video.service';
+export * from './lib/models/video.model';

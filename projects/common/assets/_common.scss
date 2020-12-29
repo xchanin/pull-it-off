@@ -1,0 +1,70 @@
+@import './theme_setup';
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import '../../../node_modules/@lcu/common/assets/styles/utils/reset';
+@import '../../../node_modules/@lcu/common/assets/styles/utils/margins-padding';
+@import './video-player-dark';
+@import './/video-player-light';
+// @import 'https://cdn.jsdelivr.net/npm/@vime/core@^5/themes/default.css';
+@import './vm-player-default';
+
+// @import '../../../../node_modules/@vime/core/themes/light.css';
+// @import '../../../../node_modules/@vime/core/themes/dark.css';
+
+// $global-theme: contrast-theme(false);
+
+
+
+// $primary-global: map-get(var(--global-test), primary);
+// $accent-global: map-get(var(--global-test), accent);
+// $warn-global: map-get(var(--global-test), warn);
+
+$primary: map-get($global-theme, primary);
+$accent: map-get($global-theme, accent);
+$warn: map-get($global-theme, warn);
+$background: map-get(map-get($global-theme, 'background'), 'background');
+$background-fill: rgba(map-get($mat-grey, 900), .75);
+$foreground: map-get(map-get($global-theme, 'foreground'), 'base');
+$primary-text: mat-color($primary);
+$secondary-text: map-get(map-get($global-theme, 'foreground'), 'secondary-text');
+
+html, body {
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0 !important;
+    background-color: $background;
+    color: white;
+}
+
+@function to-map($value) {
+    @return if(type-of($value) != map, (1: #{$value}), $value);
+}
+
+:root {
+    --global-theme: #{$global-theme};
+    --primary: #{map-get($global-theme, primary)}; // this works
+
+    $test: unquote(--global-theme);
+    @warn #{$test};
+    $mymap: to-map($test);
+    @warn TYPEOF- type-of($mymap);
+    @warn MYMAP- #{$mymap};
+
+     --primarytest: #{map-get(map-get($global-theme, primary), 500)}; // this works
+     // --primarytest: #{map-get(map-get($global-theme, 'foreground'), 'secondary-text')};
+
+    --accent: map-get(--global-theme, accent);
+    --warn: map-get(--global-theme, warn);
+    --backgroundColor: map-get(var(--global-theme, accent));
+    --secondary-text: map-get(map-get(var(#{--global-theme}), 'foreground'), 'secondary-text');
+}
+
+
+
+.tt {
+    height: 200px;
+    width: 200px;
+   // background-color: map-get(map-get($mymap, 'foreground'), 'secondary-text');
+    // background-color: var(--primarytest);
+    border: solid 1px red;
+}
+// $primary-test: map-get(#{var(--global-theme)}, primary);

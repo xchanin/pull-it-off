@@ -1,0 +1,15 @@
+<div *ngIf="Video">
+    <vm-player 
+        #player
+        playsinline
+        (vPlaybackReady)="onPlaybackReady($event)">
+        <vm-video cross-origin="true" poster="{{ Video.Poster }}">
+        <source data-src="{{ Video.URL }}" type="{{ Video.MimeType }}" />
+        </vm-video> 
+        <vm-default-ui>
+            <!-- Custom UI component. -->
+            <!-- <pio-tap-sides-to-seek></pio-tap-sides-to-seek> -->
+        </vm-default-ui>
+    </vm-player>
+</div>
+  

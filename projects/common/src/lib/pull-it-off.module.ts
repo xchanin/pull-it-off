@@ -1,3 +1,4 @@
+import { VideoService } from './services/video/video.service';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -14,6 +15,10 @@ import { HeaderComponent } from './controls/nav-mini/header/header.component';
 import { MiniLeftMenuComponent } from './controls/nav-mini/mini-left-menu/mini-left-menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MiniSideNavService } from './services/mini-sidenav.service';
+import { VideoPlayerComponent } from './controls/video-player/video-player.component';
+import { VimeModule } from '@vime/angular';
+import { TapSidesToSeekComponent } from './controls/video-player/tap-sides-to-seek/tap-sides-to-seek.component';
+import { VideoListComponent } from './controls/video-list/video-list.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,10 @@ import { MiniSideNavService } from './services/mini-sidenav.service';
     WelcomeComponent,
     SignUpComponent,
     HeaderComponent,
-    MiniLeftMenuComponent
+    MiniLeftMenuComponent,
+    VideoPlayerComponent,
+    TapSidesToSeekComponent,
+    VideoListComponent
   ],
   imports: [
     FathymSharedModule,
@@ -33,7 +41,8 @@ import { MiniSideNavService } from './services/mini-sidenav.service';
     ReactiveFormsModule,
     FlexLayoutModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    VimeModule,
   ],
   exports: [
     PullItOffDirective,
@@ -44,7 +53,10 @@ import { MiniSideNavService } from './services/mini-sidenav.service';
     WelcomeComponent,
     SignUpComponent,
     HeaderComponent,
-    MiniLeftMenuComponent
+    MiniLeftMenuComponent,
+    VideoPlayerComponent,
+    TapSidesToSeekComponent,
+    VideoListComponent
   ],
   entryComponents: [
     EventsComponent,
@@ -54,14 +66,25 @@ import { MiniSideNavService } from './services/mini-sidenav.service';
     WelcomeComponent,
     SignUpComponent,
     HeaderComponent,
-    MiniLeftMenuComponent
+    MiniLeftMenuComponent,
+    VideoPlayerComponent,
+    TapSidesToSeekComponent,
+    VideoListComponent
   ]
 })
 export class PullItOffModule {
-  static forRoot(): ModuleWithProviders<PullItOffModule> {
+  static forRoot(environment: any): ModuleWithProviders<PullItOffModule> {
     return {
       ngModule: PullItOffModule,
-      providers: [PullItOffService, MiniSideNavService]
+      providers: [
+        PullItOffService,
+        MiniSideNavService,
+        VideoService,
+        {
+          provide: 'environmentConfig',
+          useValue: environment
+        }
+      ]
     };
   }
 }

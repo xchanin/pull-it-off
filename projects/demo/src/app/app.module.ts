@@ -1,3 +1,4 @@
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -7,6 +8,10 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './controls/home/home.component';
 import { PullItOffModule } from '@pio/pull-it-off-common';
+import { Player } from '@vime/angular';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +25,9 @@ import { PullItOffModule } from '@pio/pull-it-off-common';
     FathymSharedModule,
     MaterialModule,
     FlexLayoutModule,
-    PullItOffModule.forRoot()
+    PullItOffModule.forRoot(environment),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent],
