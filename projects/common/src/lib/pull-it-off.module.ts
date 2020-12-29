@@ -1,3 +1,4 @@
+import { GenericModalService } from './services/generic-modal.service';
 import { VideoService } from './services/video/video.service';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -80,6 +81,7 @@ export class PullItOffModule {
         PullItOffService,
         MiniSideNavService,
         VideoService,
+        GenericModalService,
         {
           provide: 'environmentConfig',
           useValue: environment
