@@ -18,15 +18,25 @@ export class HomeComponent implements OnInit, OnDestroy {
    */
   public Video: VideoModel;
 
-  protected videoLoadedSubscription: Subscription;
+  /**
+   * List of all videos
+   */
+  public Videos: Array<VideoModel>;
+
+  /**
+   * Video loaded subscription,
+   * used to listen when videos have loaded
+   */
+  protected videosLoadedSubscription: Subscription;
 
   constructor(protected videoService: VideoService) {
 
-    this.WelcomeTo = 'Welcome to the home of Pull it Off';
+    this.WelcomeTo = 'Welcome to the home of Pull It Off';
 
-    this.videoLoadedSubscription = this.videoService.Loaded.subscribe((val: boolean) => {
+    this.videosLoadedSubscription = this.videoService.Loaded.subscribe((val: boolean) => {
       if (val) {
-        this.Video = this.videoService.GetVideoByID(1);
+        this.Video = this.videoService.GetVideoByID(4);
+        this.Videos = this.videoService.GetVideos();
       }
     });
   }
@@ -34,12 +44,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   // Lifecycle hooks
   public ngOnDestroy(): void {
 
-    this.videoLoadedSubscription.unsubscribe();
+    this.videosLoadedSubscription.unsubscribe();
   }
+
   public ngOnInit(): void {
 
     // Load all videos
     this.videoService.LoadVideos();
   }
-
 }

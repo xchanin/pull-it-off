@@ -3,13 +3,35 @@
         #player
         playsinline
         (vPlaybackReady)="onPlaybackReady($event)">
-        <vm-video cross-origin="true" poster="{{ Video.Poster }}">
-        <source data-src="{{ Video.URL }}" type="{{ Video.MimeType }}" />
+        <!-- Hosted videos -->
+        <vm-video 
+            *ngIf="Video.Vendor === 'hosted'" 
+            cross-origin="true" 
+            poster="{{ Video.Thumbnail }}">
+            <source data-src="{{ Video.URL }}" type="{{ Video.MimeType }}" />
         </vm-video> 
+
+        <!-- YouTube videos -->
+        
+        <vm-youtube 
+            *ngIf="Video.Vendor === 'youtube'" 
+            cross-origin="true" 
+            cookies="true" 
+            video-id="FAMXlFHOyD0">
+        </vm-youtube>
+
+        <!-- Vimeio Videos  -->
+        <vm-vimeo 
+            *ngIf="Video.Vendor === 'vimeo'" 
+            cross-origin="true" 
+            cookies="true" 
+            video-id="411652396">
+        </vm-vimeo>
         <vm-default-ui>
             <!-- Custom UI component. -->
             <!-- <pio-tap-sides-to-seek></pio-tap-sides-to-seek> -->
         </vm-default-ui>
     </vm-player>
+    
 </div>
   

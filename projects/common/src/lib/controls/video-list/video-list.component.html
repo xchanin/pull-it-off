@@ -1,1 +1,48 @@
-<p>video-list works!</p>
+<div 
+    *ngIf="VideosLoaded"
+    class="content" 
+    fxLayout="row wrap" 
+    fxLayoutGap="16px grid">
+    <mat-toolbar color="primary">
+        <span>Card view demo</span>
+        <div 
+            *ngIf="Videos.length > ColumnCount.Max"
+            fxLayout="row" 
+            fxLayoutGap="10px">
+            <button 
+                mat-button 
+                (click)="ToggleGridColumns()" 
+                fxHide.lt-md>
+            <span *ngIf="GridColumnCount === ColumnCount.Max">
+                {{ ColumnCount.Min }} Columns
+            </span>
+            <span *ngIf="GridColumnCount === ColumnCount.Min">
+                {{ ColumnCount.Max }} Columns
+            </span>
+            </button>
+        </div>
+      </mat-toolbar>
+    <div 
+        [fxFlex]="(100 / GridColumnCount) + '%'" 
+        fxFlex.xs="100%" 
+        fxFlex.sm="33%" 
+        *ngFor="let video of Videos">
+        <!-- *ngFor="let num of [1,2,3,4,5,6,7]" -->
+      <mat-card class="mat-elevation-z4" >
+        <mat-card-header>
+          <mat-card-title class="title">{{ video.Title }}</mat-card-title>
+          <mat-card-subtitle class="sub-title">{{ video.SubTitle }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="video.Thumbnail">
+        <mat-card-content>
+          <p class="plain-text">
+            {{ video.Description }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>

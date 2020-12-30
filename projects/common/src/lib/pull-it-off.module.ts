@@ -43,7 +43,7 @@ import { VideoListComponent } from './controls/video-list/video-list.component';
     FlexLayoutModule,
     MaterialModule,
     BrowserAnimationsModule,
-    VimeModule,
+    VimeModule
   ],
   exports: [
     PullItOffDirective,

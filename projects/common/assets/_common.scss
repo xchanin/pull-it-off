@@ -1,10 +1,14 @@
 @import './theme_setup';
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import './fonts';
 @import '../../../node_modules/@lcu/common/assets/styles/utils/reset';
 @import '../../../node_modules/@lcu/common/assets/styles/utils/margins-padding';
+
+/**
+* These styles are pulled from the video component, but they use CSS, so
+* I copied them over to SCSS. Will fix this later
+**/
 @import './video-player-dark';
 @import './/video-player-light';
-// @import 'https://cdn.jsdelivr.net/npm/@vime/core@^5/themes/default.css';
 @import './vm-player-default';
 
 // @import '../../../../node_modules/@vime/core/themes/light.css';
