@@ -1,11 +1,19 @@
 <div fxLayout="column">
   <h1>Welcome to Pull it Off</h1>
   <pio-welcome [welcome-message]="WelcomeTo"></pio-welcome>
-  <pio-video-player 
-   controls
-   cross-origin
-   controls-list="nodownload"
-   plays-inline
-   [video]="Video"></pio-video-player>
-  <pio-video-list [videos]="Videos"></pio-video-list>
+  <div fxLayout="row" style="background-color: blueviolet;">
+
+      <pio-video-player 
+        fxFlex="50"
+        controls
+        cross-origin
+        controls-list="nodownload"
+        plays-inline
+        [video]="Video">
+      </pio-video-player>
+   
+    <pio-video-list fxFlex [videos]="Videos"></pio-video-list>
+  </div>
+ 
+  
 </div>

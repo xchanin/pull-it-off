@@ -1,5 +1,4 @@
 <div *ngIf="Video">
-    <div class="video">
         <video 
             #player
             id="player"
@@ -14,11 +13,16 @@
             (playing)=OnPlaying()
             (pause)=OnPaused()
             (volumechange)=OnVolumeChange()
+            (timeupdate)=OnTimeUpdate()
+            (durationchange)=OnDurationChange()
             poster="{{ Video.Thumbnail }}">
             <source src="{{ Video.URL }}" type="{{ Video.MimeType }}" />
             Browser not supported
+            <!-- Can add custom controls 
+                https://www.youtube.com/watch?v=yY6XnbWnK4o
+                https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Video_player_styling_basics
+            -->
         </video>
-        </div>
     <!-- <vm-player 
         #player
         playsinline

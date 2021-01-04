@@ -1,6 +1,8 @@
+import { Subject } from 'rxjs/internal/Subject';
 import { Component, ElementRef, Input, OnInit, Output, ViewChild, EventEmitter } from '@angular/core';
 import { ControlList, CrossOrigin } from '../../data-types/video.types';
 import { VideoModel } from './../../models/video.model';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'pio-video-player',
@@ -10,11 +12,13 @@ import { VideoModel } from './../../models/video.model';
 
 export class VideoPlayerComponent implements OnInit {
 
+  protected playerReady: Subject<boolean>;
+
   /**
    * video player element
    */
   @ViewChild('player')
-  public Player: ElementRef;
+  public Player: ElementRef; 
 
 // Inputs
 
@@ -42,7 +46,7 @@ export class VideoPlayerComponent implements OnInit {
 
   /**
    * Indicates whether to use CORS to be used
-   * 
+   *
    * (anonymous, use-credentials, or '' - empty string is the same as anonymous)
    */
   @Input('cross-origin')
@@ -62,11 +66,6 @@ export class VideoPlayerComponent implements OnInit {
    */
   @Input('loop')
   public Loop: boolean;
-
-  // @Input('on-play')
-  // public set OnPlay(val: any) {
-  //   debugger;
-  // }
 
   /**
    * Default setting of audio
@@ -89,6 +88,18 @@ export class VideoPlayerComponent implements OnInit {
   public Video: VideoModel;
 
   // Outputs
+
+  /**
+   * Event when current time changes
+   */
+  @Output('current-time')
+  public CurrentTime: EventEmitter<number>;
+
+  /**
+   * Event when duration changes
+   */
+  @Output('duration')
+  public Duration: EventEmitter<number>;
 
   /**
    * Event when video ends
@@ -121,11 +132,14 @@ export class VideoPlayerComponent implements OnInit {
   public Waiting: EventEmitter<boolean>;
 
   constructor() {
+    this.CurrentTime = new EventEmitter<number>();
+    this.Duration = new EventEmitter<number>();
     this.Ended = new EventEmitter<boolean>();
     this.Playing = new EventEmitter<boolean>();
     this.Paused = new EventEmitter<boolean>();
     this.Waiting = new EventEmitter<boolean>();
     this.VolumeChange = new EventEmitter<number>();
+    this.playerReady = new Subject<boolean>();
   }
 
   ngOnInit(): void {
@@ -134,6 +148,13 @@ export class VideoPlayerComponent implements OnInit {
 
   public PLayVideo(): void {
    // this.Player.play();
+  }
+
+  /**
+   * Video duration
+   */
+  public OnDurationChange(): void {
+    this.Duration.emit(this.Player.nativeElement.duration);
   }
 
   /**
@@ -154,10 +175,15 @@ export class VideoPlayerComponent implements OnInit {
    * Video is paused
    */
   public OnPaused(): void {
-    console.log('PAUSED', this.Player.nativeElement.currentTime);
     this.Paused.emit(this.Player.nativeElement.paused);
   }
 
+  /**
+   * Video's current time
+   */
+  public OnTimeUpdate(): void {
+    this.CurrentTime.emit(this.Player.nativeElement.currentTime);
+  }
   /**
    * Audio volume changed
    */

@@ -52,12 +52,4 @@ export class HomeComponent implements OnInit, OnDestroy {
     // Load all videos
     this.videoService.LoadVideos();
   }
-
-  public VideoPlaying(evt: Event): void {
-    debugger;
-  }
-
-  public VideoIsPlaying(evt: Event): void {
-    debugger;
-  }
 }
