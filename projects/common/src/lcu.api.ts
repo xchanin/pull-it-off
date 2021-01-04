@@ -23,4 +23,5 @@ export * from './lib/models/video.model';
 export * from './lib/models/generic-modal.model';
 export * from './lib/services/generic-modal.service';
 export * from './lib/models/min-max-column-count.model';
+export * from './lib/data-types/video.types';
 

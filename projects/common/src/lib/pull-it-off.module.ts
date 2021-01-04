@@ -1,8 +1,8 @@
-import { GenericModalService } from './services/generic-modal.service';
-import { VideoService } from './services/video/video.service';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { VimeModule } from '@vime/angular';
 import { FathymSharedModule, MaterialModule } from '@lcu/common';
 import { PullItOffDirective } from './directives/pull-it-off.directive';
 import { PullItOffService } from './services/pull-it-off.service';
@@ -14,12 +14,12 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { HeaderComponent } from './controls/nav-mini/header/header.component';
 import { MiniLeftMenuComponent } from './controls/nav-mini/mini-left-menu/mini-left-menu.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { VideoService } from './services/video/video.service';
 import { MiniSideNavService } from './services/mini-sidenav.service';
 import { VideoPlayerComponent } from './controls/video-player/video-player.component';
-import { VimeModule } from '@vime/angular';
 import { TapSidesToSeekComponent } from './controls/video-player/tap-sides-to-seek/tap-sides-to-seek.component';
 import { VideoListComponent } from './controls/video-list/video-list.component';
+import { GenericModalService } from './services/generic-modal.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,7 @@ import { VideoListComponent } from './controls/video-list/video-list.component';
     FlexLayoutModule,
     MaterialModule,
     BrowserAnimationsModule,
-    VimeModule
+    // VimeModule
   ],
   exports: [
     PullItOffDirective,

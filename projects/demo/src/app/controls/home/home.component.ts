@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     this.videosLoadedSubscription = this.videoService.Loaded.subscribe((val: boolean) => {
       if (val) {
-        this.Video = this.videoService.GetVideoByID(4);
+        this.Video = this.videoService.GetVideoByID(1);
         this.Videos = this.videoService.GetVideos();
       }
     });
@@ -51,5 +51,13 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     // Load all videos
     this.videoService.LoadVideos();
+  }
+
+  public VideoPlaying(evt: Event): void {
+    debugger;
+  }
+
+  public VideoIsPlaying(evt: Event): void {
+    debugger;
   }
 }

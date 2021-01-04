@@ -1,5 +1,5 @@
 import { Component, ElementRef } from '@angular/core';
-import { VimeComponent } from '@vime/angular';
+// import { VimeComponent } from '@vime/angular';
 
 @Component({
   selector: 'pio-tap-sides-to-seek',
@@ -7,7 +7,7 @@ import { VimeComponent } from '@vime/angular';
   styleUrls: ['./tap-sides-to-seek.component.scss']
 })
 
-export class TapSidesToSeekComponent extends VimeComponent {
+export class TapSidesToSeekComponent {
   currentTime = 0;
 
   duration = -1;
@@ -29,10 +29,6 @@ export class TapSidesToSeekComponent extends VimeComponent {
    */
   constructor(protected ref: ElementRef) {
     // Pass in the properties you'd like to bind to this component.
-    super([
-      'currentTime',
-      'duration',
-    ]);
 
     // There is a player ref if you need to call any methods.
     // this.player

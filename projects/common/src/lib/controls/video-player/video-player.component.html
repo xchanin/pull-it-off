@@ -1,9 +1,29 @@
 <div *ngIf="Video">
-    <vm-player 
+    <div class="video">
+        <video 
+            #player
+            id="player"
+            [attr.controls]=Controls 
+            [attr.autoplay]=AutoPlay
+            [attr.mutted]=Muted
+            [attr.controlsList]=ControlsList
+            [attr.playsinline]="PlaysInline"
+            [attr.disablePictureInPicture]=DisablePictureInPicture
+            [attr.loop]=Loop
+            (ended)=OnEnded()
+            (playing)=OnPlaying()
+            (pause)=OnPaused()
+            (volumechange)=OnVolumeChange()
+            poster="{{ Video.Thumbnail }}">
+            <source src="{{ Video.URL }}" type="{{ Video.MimeType }}" />
+            Browser not supported
+        </video>
+        </div>
+    <!-- <vm-player 
         #player
         playsinline
         (vPlaybackReady)="onPlaybackReady($event)">
-        <!-- Hosted videos -->
+        
         <vm-video 
             *ngIf="Video.Vendor === 'hosted'" 
             cross-origin="true" 
@@ -11,7 +31,7 @@
             <source data-src="{{ Video.URL }}" type="{{ Video.MimeType }}" />
         </vm-video> 
 
-        <!-- YouTube videos -->
+        
         
         <vm-youtube 
             *ngIf="Video.Vendor === 'youtube'" 
@@ -20,7 +40,7 @@
             video-id="FAMXlFHOyD0">
         </vm-youtube>
 
-        <!-- Vimeio Videos  -->
+       
         <vm-vimeo 
             *ngIf="Video.Vendor === 'vimeo'" 
             cross-origin="true" 
@@ -28,10 +48,9 @@
             video-id="411652396">
         </vm-vimeo>
         <vm-default-ui>
-            <!-- Custom UI component. -->
-            <!-- <pio-tap-sides-to-seek></pio-tap-sides-to-seek> -->
+       
         </vm-default-ui>
-    </vm-player>
+    </vm-player> -->
     
 </div>
   

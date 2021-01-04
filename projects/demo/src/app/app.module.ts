@@ -7,10 +7,9 @@ import { FathymSharedModule, MaterialModule } from '@lcu/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './controls/home/home.component';
-import { PullItOffModule } from '@pio/pull-it-off-common';
-import { Player } from '@vime/angular';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
+import { PullItOffModule } from '@pio/pull-it-off-common';
 
 
 @NgModule({
