@@ -1,7 +1,12 @@
 <div fxLayout="column">
   <h1>Welcome to Pull it Off</h1>
   <pio-welcome [welcome-message]="WelcomeTo"></pio-welcome>
-  <div fxLayout="row" style="background-color: blueviolet;">
+
+    <pio-animated-card></pio-animated-card>
+  
+  
+  
+  <div fxLayout="row">
 
       <pio-video-player 
         fxFlex="50"
@@ -14,6 +19,4 @@
    
     <pio-video-list fxFlex [videos]="Videos"></pio-video-list>
   </div>
- 
-  
 </div>

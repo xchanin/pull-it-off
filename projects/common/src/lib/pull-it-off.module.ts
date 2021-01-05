@@ -20,6 +20,8 @@ import { VideoPlayerComponent } from './controls/video-player/video-player.compo
 import { TapSidesToSeekComponent } from './controls/video-player/tap-sides-to-seek/tap-sides-to-seek.component';
 import { VideoListComponent } from './controls/video-list/video-list.component';
 import { GenericModalService } from './services/generic-modal.service';
+import { AnimatedCardComponent } from './controls/animated-card/animated-card.component';
+import { MouseMoveDirective } from './directives/mouse-move.directive';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { GenericModalService } from './services/generic-modal.service';
     MiniLeftMenuComponent,
     VideoPlayerComponent,
     TapSidesToSeekComponent,
-    VideoListComponent
+    VideoListComponent,
+    AnimatedCardComponent,
+    MouseMoveDirective
   ],
   imports: [
     FathymSharedModule,
@@ -57,7 +61,9 @@ import { GenericModalService } from './services/generic-modal.service';
     MiniLeftMenuComponent,
     VideoPlayerComponent,
     TapSidesToSeekComponent,
-    VideoListComponent
+    VideoListComponent,
+    AnimatedCardComponent,
+    MouseMoveDirective
   ],
   entryComponents: [
     EventsComponent,
@@ -70,7 +76,8 @@ import { GenericModalService } from './services/generic-modal.service';
     MiniLeftMenuComponent,
     VideoPlayerComponent,
     TapSidesToSeekComponent,
-    VideoListComponent
+    VideoListComponent,
+    AnimatedCardComponent
   ]
 })
 export class PullItOffModule {
