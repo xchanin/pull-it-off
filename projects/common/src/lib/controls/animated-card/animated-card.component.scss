@@ -1,3 +1,7 @@
+.ease-on-out {
+    transition: all 0.75s ease-out;
+}
+
 .container {
     background-color: rgba(173, 216, 230, 0.383);
     perspective: 1000px;
@@ -17,7 +21,7 @@
 .image img {
     width: 10rem;
     z-index: 2;
-    transition: all 0.75s ease-out;
+    @extend .ease-on-out;
 }
 
 .circle {
@@ -35,13 +39,13 @@
 
 .info h1 {
     font-size: 1.75rem;
-    transition: all 0.75s ease-out;
+    @extend .ease-on-out;
 }
 
 .info h3 {
     font-size: .8rem;
     font-weight: lighter;
-    transition: all 0.75s ease-out;
+    @extend .ease-on-out;
 }
 
 .sizes {
@@ -60,7 +64,7 @@
             color: white;
         }
     }
-    transition: all 0.75s ease-out;
+    @extend .ease-on-out;
 }
 
 .purchase {
@@ -76,5 +80,5 @@
         border-radius: 7px;
         font-weight: bolder;
     }
-    transition: all 0.75s ease-out;
+    @extend .ease-on-out;
 }
