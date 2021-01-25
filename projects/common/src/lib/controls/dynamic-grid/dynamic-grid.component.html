@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="box"
+        *ngFor="let cell of ColumnRows;
+        let i = index" 
+        [ngStyle]="
+        {
+            'grid-column': 'span ' + cell.ColumnSize, 
+            'grid-row': 'span ' + cell.RowSize
+        }"
+        (click)="Resize(cell)">
+        <div class="content">
+            <p>{{cell.ID}}</p>
+            <img src="./images/1.png" alt="">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint placeat doloribus doloremque omnis
+                molestias, necessitatibus optio at obcaecati veritatis voluptatum?</p>
+        </div>
+    </div>
+</div>  

@@ -11,7 +11,7 @@ import { PullItOffModule } from '@pio/pull-it-off-common';
     BrowserModule,
     BrowserAnimationsModule,
     FathymSharedModule,
-    PullItOffModule.forRoot()
+    PullItOffModule.forRoot(environment)
   ],
   providers: [
     {

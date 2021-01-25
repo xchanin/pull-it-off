@@ -1,33 +1,32 @@
 <!-- <div [className]="ThemeClass | async" style="height: 100%"> -->
-  <!-- <div class="tt"></div> -->
-  <div 
-    fxFlexFill 
-    fxLayout="column">
-    <pio-header 
-      [mini-side-nav]="minileftmenu">
-    </pio-header>
+<!-- <div class="tt"></div> -->
+<div fxFlexFill fxLayout="column">
+  <pio-header [mini-side-nav]="minileftmenu">
+  </pio-header>
 
-    <mat-sidenav-container 
-      fxFlex 
-      class="sidenav-container">
-      <mat-sidenav 
-        #minileftmenu 
-        mode="side" 
-        opened>
-        <pio-mini-left-menu
-          [nav-links]="Links">
-        </pio-mini-left-menu>
-      </mat-sidenav>
-      <mat-sidenav-content 
-        [@onMainContentChange]="onSideNavChange ? 'open': 'close'">
-        <div class="margin-5 router-container">
-          <router-outlet 
-            (activate)="OnActivate($event)">
-          </router-outlet>
-        </div>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
-    <!-- <pio-side-nav
+
+
+  <!-- <div style="background-color: blueviolet;">
+    <img src="assets/images/logo-single.svg" alt="">
+  </div> -->
+
+
+
+
+  <mat-sidenav-container fxFlex class="sidenav-container">
+    <mat-sidenav #minileftmenu mode="side" opened>
+      <pio-mini-left-menu [nav-links]="Links">
+      </pio-mini-left-menu>
+    </mat-sidenav>
+    <mat-sidenav-content [@onMainContentChange]="onSideNavChange ? 'open': 'close'">
+      <div class="margin-5 router-container">
+        <router-outlet (activate)="OnActivate($event)">
+        </router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <!-- <pio-side-nav
            [nav-links]="Links" 
            logo-class="primary-logo"
            logo-alt="Fathym Logo">
@@ -36,6 +35,4 @@
            </div>
 
        </pio-side-nav> -->
-   </div>
-   
-    
+</div>

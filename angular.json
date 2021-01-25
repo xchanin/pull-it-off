@@ -199,6 +199,16 @@
                 "input": "./projects/demo/",
                 "output": "/"
               },
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@lcu/common/assets",
+                "output": "/assets/"
+              },
+              {
+                "glob": "**/*",
+                "input": "./projects/common/assets",
+                "output": "/assets/"
+              },
               "projects/demo/src/docs"
             ],
             "styles": [

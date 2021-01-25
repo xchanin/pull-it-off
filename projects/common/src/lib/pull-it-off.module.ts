@@ -2,7 +2,6 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { VimeModule } from '@vime/angular';
 import { FathymSharedModule, MaterialModule } from '@lcu/common';
 import { PullItOffDirective } from './directives/pull-it-off.directive';
 import { PullItOffService } from './services/pull-it-off.service';
@@ -22,6 +21,9 @@ import { VideoListComponent } from './controls/video-list/video-list.component';
 import { GenericModalService } from './services/generic-modal.service';
 import { AnimatedCardComponent } from './controls/animated-card/animated-card.component';
 import { MouseMoveDirective } from './directives/mouse-move.directive';
+import { DynamicGridComponent } from './controls/dynamic-grid/dynamic-grid.component';
+
+// import {MatIconModule, MatIconRegistry} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { MouseMoveDirective } from './directives/mouse-move.directive';
     TapSidesToSeekComponent,
     VideoListComponent,
     AnimatedCardComponent,
-    MouseMoveDirective
+    MouseMoveDirective,
+    DynamicGridComponent
   ],
   imports: [
     FathymSharedModule,
@@ -46,8 +49,7 @@ import { MouseMoveDirective } from './directives/mouse-move.directive';
     ReactiveFormsModule,
     FlexLayoutModule,
     MaterialModule,
-    BrowserAnimationsModule,
-    // VimeModule
+    BrowserAnimationsModule
   ],
   exports: [
     PullItOffDirective,
@@ -63,7 +65,8 @@ import { MouseMoveDirective } from './directives/mouse-move.directive';
     TapSidesToSeekComponent,
     VideoListComponent,
     AnimatedCardComponent,
-    MouseMoveDirective
+    MouseMoveDirective,
+    DynamicGridComponent
   ],
   entryComponents: [
     EventsComponent,
@@ -77,7 +80,8 @@ import { MouseMoveDirective } from './directives/mouse-move.directive';
     VideoPlayerComponent,
     TapSidesToSeekComponent,
     VideoListComponent,
-    AnimatedCardComponent
+    AnimatedCardComponent,
+    DynamicGridComponent
   ]
 })
 export class PullItOffModule {
