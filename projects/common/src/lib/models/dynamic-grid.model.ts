@@ -1,20 +1,26 @@
 export class DynamicGridModel {
     public BackgroundColor?: string;
-    public BaseColumnSize?: number;
-    public BaseRowSize?: number;
+    public DefaultColumnSize?: number;
+    public DefaultRowSize?: number;
     public ColumnSize: number;
+    public Index?: number;
     public IsExpanded?: boolean;
     public ID: string;
+    public Order?: number;
     public RowSize: number;
 
-    constructor(id: string, col: number, row: number) {
-        this.ColumnSize = col;
-        this.ID = id;
-        this.RowSize = row;
+    constructor(opts: DynamicGridModel) {
+        Object.assign(this, opts); // destructure values
+
+        this.setDefaultSizes();
     }
 
-    public SetBaseSizes(): void {
-        this.BaseColumnSize = this.ColumnSize;
-        this.BaseRowSize = this.RowSize;
+    /**
+     * Set default span values
+     */
+    protected setDefaultSizes?(): void {
+        // debugger;
+        this.DefaultColumnSize = this.ColumnSize;
+        this.DefaultRowSize = this.RowSize;
     }
 }

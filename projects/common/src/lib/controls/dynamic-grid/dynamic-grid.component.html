@@ -5,12 +5,20 @@
         [ngStyle]="
         {
             'grid-column': 'span ' + cell.ColumnSize, 
-            'grid-row': 'span ' + cell.RowSize
+            'grid-row': 'span ' + cell.RowSize,
+            'background-color': cell.BackgroundColor,
+            'order': cell.Order
         }"
         (click)="Resize(cell)">
         <div class="content">
-            <p>{{cell.ID}}</p>
-            <img src="./images/1.png" alt="">
+            <span>ID: {{ cell.ID }}</span>
+            <span>Expanded: {{ cell.IsExpanded }}</span>
+            <span>ORDER: {{ cell.Order }}</span>
+            <span>COLUMN SIZE: {{ cell.ColumnSize }}</span>
+            <span>ROW SIZE: {{ cell.RowSize }}</span>
+            <span>Default COLUMN SIZE: {{ cell.DefaultColumnSize }}</span>
+            <span>Default ROW SIZE: {{ cell.DefaultRowSize }}</span>
+            <!-- <img src="./images/1.png" alt=""> -->
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint placeat doloribus doloremque omnis
                 molestias, necessitatibus optio at obcaecati veritatis voluptatum?</p>
         </div>

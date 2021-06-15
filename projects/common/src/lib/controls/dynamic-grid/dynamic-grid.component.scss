@@ -1,14 +1,14 @@
 $background-colors: 
-rgba($color: #750e0e, $alpha: 1.0), 
-rgba($color: #ee1818, $alpha: 1.0), 
-rgba($color: #0e5d75, $alpha: 1.0), 
-rgba($color: #3a3cce, $alpha: 1.0), 
-rgba($color: #750e4a, $alpha: 1.0), 
-rgba($color: #0e7570, $alpha: 1.0), 
-rgba($color: #b4da6e, $alpha: 1.0), 
-rgba($color: #d4bf44, $alpha: 1.0),
-rgba($color: #721313, $alpha: 1.0),
-rgba($color: #e70ca5, $alpha: 1.0);
+rgba($color: rgb(117, 14, 14), $alpha: 1.0), 
+rgba($color: rgb(238, 24, 24), $alpha: 1.0), 
+rgba($color: rgb(14, 93, 117), $alpha: 1.0), 
+rgba($color: rgb(58, 60, 206), $alpha: 1.0), 
+rgba($color: rgb(117, 14, 74), $alpha: 1.0), 
+rgba($color: rgb(14, 117, 112), $alpha: 1.0), 
+rgba($color: rgb(180, 218, 110), $alpha: 1.0), 
+rgba($color: rgb(212, 191, 68), $alpha: 1.0),
+rgba($color: rgb(114, 19, 19), $alpha: 1.0),
+rgba($color: rgb(231, 12, 165), $alpha: 1.0);
 
 $border-radius: 0.5rem;
 
@@ -17,7 +17,7 @@ $border-radius: 0.5rem;
     max-width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, [col] minmax(300px, 1fr));
-    grid-template-rows: [row] minmax(100px, auto);
+    grid-template-rows: [row] minmax(200px, auto);
     margin: 10px;
     grid-auto-flow: dense;
     grid-gap: 10px;
@@ -32,13 +32,7 @@ $border-radius: 0.5rem;
         border-radius: $border-radius;
         overflow: hidden;
         cursor: pointer;
-        // set each cell color
-        @for $i from 1 through 9 {
-            &:nth-of-type(#{$i}) {
-               // background-color: nth($background-colors, $i);
-        }
-    }   
-
+ 
         .content {
             display: grid;
             place-items: center;
@@ -59,22 +53,6 @@ $border-radius: 0.5rem;
             margin-bottom: 10px;
         }
     }
-
-    /*
-    * Loop over nest map and assign column and row span sizes
-    *
-    *@param $key - name of nested map, 
-    *              in this case using it like an index
-    *
-    *@param $value - in this case another map
-    */
-    // @each $key, $value in  $column-row-map {
-    //     $i: index($column-row-map, $key);
-    //     .box:nth-child(#{$key}) {
-    //         grid-column: span map-get($value, col);
-    //         grid-row: span map-get($value, row);
-    //     } 
-    //  }
 }
 
 @media (max-width: 991px) {

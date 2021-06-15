@@ -26,4 +26,5 @@ export * from './lib/models/min-max-column-count.model';
 export * from './lib/data-types/video.types';
 export * from './lib/controls/dynamic-grid/dynamic-grid.component';
 export * from './lib/models/dynamic-grid.model';
+export * from './lib/services/color/color-converter.service';
 

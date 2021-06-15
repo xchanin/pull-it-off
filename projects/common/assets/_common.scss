@@ -44,19 +44,19 @@ html, body {
 }
 
 :root {
-    --global-theme: #{$global-theme};
-    --primary: #{map-get($global-theme, primary)}; // this works
+    --global-theme: map-get($global-theme);
+    // --primary: #{map-get($global-theme, primary)}; // this works
 
     $test: unquote(--global-theme);
-    @warn #{$test};
+    // @warn #{$test};
     $mymap: to-map($test);
-    @warn TYPEOF- type-of($mymap);
-    @warn MYMAP- #{$mymap};
+    // @warn TYPEOF- type-of($mymap);
+    // @warn MYMAP- #{$mymap};
 
      --primarytest: #{map-get(map-get($global-theme, primary), 500)}; // this works
      // --primarytest: #{map-get(map-get($global-theme, 'foreground'), 'secondary-text')};
 
-    --accent: map-get(--global-theme, accent);
+    --accent: map-get(var(--global-theme), accent);
     --warn: map-get(--global-theme, warn);
     --backgroundColor: map-get(var(--global-theme, accent));
     --secondary-text: map-get(map-get(var(#{--global-theme}), 'foreground'), 'secondary-text');

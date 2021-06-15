@@ -4,7 +4,7 @@ import { VideoService } from './../../../../../common/src/lib/services/video/vid
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { SVGIconsModel, SvgIconsService } from '@lcu/common';
+import { SVGToMatIconModel, SvgToMatIconService } from '@lowcodeunit/lcu-icons-common';
 
 @Component({
   selector: 'pio-home',
@@ -32,14 +32,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   protected videosLoadedSubscription: Subscription;
 
 
-  private  path: string  = '/assets/images/svgs/icons/'; // test
-
+  private  path: string  = '/assets/images/svgs/'; // test
 
   constructor(
     protected videoService: VideoService,
     protected domSanitizer: DomSanitizer,
     protected matIconRegistry: MatIconRegistry,
-    protected svgIconsService: SvgIconsService) {
+    protected svgToMatIconService: SvgToMatIconService) {
 
     this.WelcomeTo = 'Welcome to the home of Pull It Off';
 
@@ -52,14 +51,16 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 // https://medium.com/@anglebrackets.io/angular-materials-mat-icon-35670aa1d3af
 
-    const icons: Array<SVGIconsModel> =
+    const icons: Array<SVGToMatIconModel> =
     [
       { Name: 'svghome', IconPath: 'home-page.svg' },
+      { Name: 'download', IconPath: 'download.svg' },
+      { Name: 'test', IconPath: 'test.svg' },
       { Name: 'twitter', IconPath: 'twitter.svg' },
       { Name: 'add', IconPath: 'phone.svg' }
     ];
 
-    this.svgIconsService.SetIcons(icons, this.path);
+    this.svgToMatIconService.SetIcons(icons, this.path);
   }
 
   // Lifecycle hooks

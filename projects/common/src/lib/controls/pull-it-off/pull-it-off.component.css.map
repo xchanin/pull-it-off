@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,iBAAiB,CAAC;EAChB,MAAM,EAAE,OAAO;EACf,OAAO,EAAE,YAAY;EACrB,MAAM,EAAE,GAAG;EACX,UAAU,EAAE,KAAK;CAclB;;AAlBD,AAQI,iBARa,CAMf,wBAAwB,CAEtB,SAAS,CAAC;EACR,SAAS,EAAE,IAAI;CAChB;;AAVL,AAaE,iBAbe,CAaf,yBAAyB,CAAC;EACxB,UAAU,EAAE,OAAO;EACnB,OAAO,EAAE,GAAG;EACZ,WAAW,EAAE,IAAI;CAClB",
+    "sources": [
+        "pull-it-off.component.scss"
+    ],
+    "names": [],
+    "file": "pull-it-off.component.css"
+}
